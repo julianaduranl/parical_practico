@@ -1,0 +1,35 @@
+<p>pais-list works!</p>
+<div class="container-fluid mt-2">
+    <h2 class="text-center">Authors</h2>
+  
+    <div class="col" *ngIf="selected">
+      <app-pais-detail [paisDetail]="selectedPais"></app-paisdetail>
+    </div>
+    <br>
+    <div class="row mb-8">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <table class="table">
+            <div *ngFor="let pais of paises" class="pais-card col">
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td  (click)="onSelected(pais)">{{ pais.name }} </td>
+                      <td>{{ pais.capital }}</td>
+                      <td>{{ pais.formation_year }}</td>
+                    </tr>
+                  </tbody>
+            </div>
+    </div>
+
+      <br>
+      <br>
+    </div>
+  </div>
+
